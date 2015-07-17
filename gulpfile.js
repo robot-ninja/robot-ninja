@@ -6,6 +6,10 @@ var eslint = require('gulp-eslint');
 var babel = require("gulp-babel");
 var sourcemaps = require("gulp-sourcemaps");
 
+gulp.task('default', function() {
+  return runSequence('lint', 'build');
+});
+
 gulp.task('lint', function() {
   var eslintrc = './.eslintrc';
 
@@ -25,7 +29,7 @@ gulp.task('build', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', function() {
-  return runSequence('lint', 'build');
+gulp.task('watch', ['build'], function() {
+  gulp.watch(['src/**/*.js'], ['build']);
 });
 
