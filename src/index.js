@@ -1,13 +1,18 @@
-class Test {
-  static hi = "hi";
-  constructor() {
-    this.a = 1;
-  }
+const urljoin = require('url-join');
 
-  *test() {
-    yield this.a;
-  }
+const route = require('koa-route');
+const compose = require('koa-compose');
+
+const defaultConfig = require('./config/default');
+
+export default function wiki(options) {
+  const settings = Object.assign(defaultConfig, options || {});
+  const basePath = settings.basePath;
+  const url = (path) => urljoin(basePath, path);
+
+  return compose([
+    route.get(url('test'), function *test() {
+      console.log('test');
+    })
+  ]);
 }
-
-const test = new Test();
-test.test();
