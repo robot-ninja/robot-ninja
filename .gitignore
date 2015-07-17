@@ -1,3 +1,15 @@
+# Created by https://www.gitignore.io
+
+### Vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+
+### Node ###
 # Logs
 logs
 *.log
@@ -25,3 +37,10 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+
+### Bower ###
+.bower-cache
+.bower-registry
+.bower-tmp
+

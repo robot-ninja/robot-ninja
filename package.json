@@ -1,0 +1,23 @@
+{
+  "name": "robot-ninja",
+  "version": "0.0.0",
+  "description": "More than just an extensible wiki engine written in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunjay/robot-ninja.git"
+  },
+  "keywords": [
+    "robot",
+    "ninja"
+  ],
+  "author": "Sunjay Varma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunjay/robot-ninja/issues"
+  },
+  "homepage": "https://github.com/sunjay/robot-ninja#readme"
+}
