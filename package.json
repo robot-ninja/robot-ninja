@@ -1,6 +1,6 @@
 {
   "name": "robot-ninja",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "More than just an extensible wiki engine written in Node.js",
   "main": "build/index.js",
   "scripts": {
