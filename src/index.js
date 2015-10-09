@@ -1,18 +1,21 @@
-const urljoin = require('url-join');
-
-const route = require('koa-route');
-const compose = require('koa-compose');
+const Router = require('koa-router');
 
 const defaultConfig = require('./config/default');
+const pagesRouter = require('./routes/pages');
 
 export default function wiki(options) {
-  const settings = Object.assign(defaultConfig, options || {});
+  const settings = Object.assign({}, defaultConfig, options || {});
   const basePath = settings.basePath;
-  const url = (path) => urljoin(basePath, path);
 
-  return compose([
-    route.get(url('test'), function *test() {
-      console.log('test');
-    })
-  ]);
+  const router = new Router({
+    prefix: basePath
+  });
+  router.get('/', function*() {
+    this.body = "testtt";
+  });
+  router.get('/pages', pagesRouter.routes());
+  console.log(basePath);
+
+  return router.routes();
 }
+
